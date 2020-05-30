@@ -8,8 +8,11 @@ class  UserCtl{
     }
     async create(ctx){
         const {phone}=ctx.request.body;
+<<<<<<< HEAD
         const repeatUser = await Users.findOne({ phone });
         if (repeatUser) { ctx.throw(409, '文件已经存在') }
+=======
+>>>>>>> 2df2fc23562f392efa224233e828ca429ef223ff
         const users=await new Users(ctx.request.body).save();
         ctx.body=users;
     }
@@ -22,8 +25,12 @@ class  UserCtl{
        ctx.body=users;
     }
     async del(ctx){
+<<<<<<< HEAD
         const { phone } = ctx.request.body;
         const users= await Users.findByIdAndRemove({phone});
+=======
+        const users= await Users.findByIdAndRemove(ctx.params.id);
+>>>>>>> 2df2fc23562f392efa224233e828ca429ef223ff
         if(!users){ctx.throw(404,'用户不存在！')}
         ctx.status=204;
 }

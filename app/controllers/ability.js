@@ -5,7 +5,11 @@ class  UserCtl{
         ctx.body=await Ability.findOne({phone});
     }
     async create(ctx){
+<<<<<<< HEAD
         const {phone}=ctx.request.body;
+=======
+        const {name}=ctx.request.body;
+>>>>>>> 2df2fc23562f392efa224233e828ca429ef223ff
         // const repeatUser=await Ability.findOne({name});
         // if(repeatUser){ctx.throw(409,'文件已经存在')}
         const ability=await new Ability(ctx.request.body).save();

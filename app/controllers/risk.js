@@ -8,8 +8,13 @@ class  RiskCtl{
     }
     async create(ctx){
         const {phone}=ctx.request.body;
+<<<<<<< HEAD
         const repeatRisk=await Risk.findOne({phone});
         if(repeatRisk){ctx.throw(409,'文件已经存在')}
+=======
+        // const repeatRisk=await Risk.findOne({phone});
+        // if(repeatRisk){ctx.throw(409,'文件已经存在')}
+>>>>>>> 2df2fc23562f392efa224233e828ca429ef223ff
         const risk=await new Risk(ctx.request.body).save();
         ctx.body=risk ;
     }

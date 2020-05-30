@@ -8,8 +8,13 @@ class  ProjectCtl{
     }
     async create(ctx){
         const {phone}=ctx.request.body;
+<<<<<<< HEAD
         const repeatProject=await Project.findOne({phone});
         if(repeatProject){ctx.throw(409,'文件已经存在')}
+=======
+        // const repeatProject=await Project.findOne({phone});
+        // if(repeatProject){ctx.throw(409,'文件已经存在')}
+>>>>>>> 2df2fc23562f392efa224233e828ca429ef223ff
         const project=await new Project(ctx.request.body).save();
         ctx.body=project ;
     }
